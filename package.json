@@ -1,24 +1,27 @@
 {
   "name": "jupyterlab_gruvbox_material",
-  "version": "1.1.0",
-  "description": "Gruvbox Material (dark) theme for JupyterLab 3.",
+  "version": "2.0.0",
+  "description": "Gruvbox Material (dark) theme for JupyterLab 4.",
   "keywords": [
     "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension",
     "jupyterlab-theme",
     "gruvbox",
-    "gruvbox-material",
-    "jupyterlab",
-    "jupyterlab-extension"
+    "gruvbox-material"
   ],
   "homepage": "https://github.com/mergelangelo/jupyterlab-gruvbox-material",
   "bugs": {
     "url": "https://github.com/mergelangelo/jupyterlab-gruvbox-material/issues"
   },
   "license": "BSD-3-Clause",
-  "author": "mergelangelo",
+  "author": {
+    "name": "mergelangelo"
+  },
   "files": [
-    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
-    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+    "lib/**/*.{d.ts,js,js.map,json}",
+    "style/**/*.css",
+    "src/**/*.ts"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -27,48 +30,35 @@
     "url": "https://github.com/mergelangelo/jupyterlab-gruvbox-material.git"
   },
   "scripts": {
-    "build": "jlpm run build:lib && jlpm run build:labextension:dev",
-    "build:prod": "jlpm run build:lib && jlpm run build:labextension",
+    "build": "jlpm build:lib && jlpm build:labextension:dev",
+    "build:prod": "jlpm clean && jlpm build:lib && jlpm build:labextension",
     "build:labextension": "jupyter labextension build .",
     "build:labextension:dev": "jupyter labextension build --development True .",
     "build:lib": "tsc",
-    "clean": "jlpm run clean:lib",
+    "clean": "jlpm clean:lib && jlpm clean:labextension",
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
-    "clean:labextension": "rimraf jupyterlab_gruvbox_material/labextension",
-    "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
-    "eslint": "eslint . --ext .ts,.tsx --fix",
-    "eslint:check": "eslint . --ext .ts,.tsx",
-    "install:extension": "jupyter labextension develop --overwrite .",
-    "prepare": "jlpm run clean && jlpm run build:prod",
+    "clean:labextension": "rimraf jupyterlab_gruvbox_material/labextension jupyterlab_gruvbox_material/_version.py",
+    "install:extension": "jlpm build",
     "watch": "run-p watch:src watch:labextension",
     "watch:src": "tsc -w",
     "watch:labextension": "jupyter labextension watch ."
   },
   "dependencies": {
-    "@jupyterlab/application": "^3.0.0",
-    "@jupyterlab/apputils": "^3.0.0"
+    "@jupyterlab/application": "^4.0.0",
+    "@jupyterlab/apputils": "^4.0.0"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "~3.4.4",
-    "@typescript-eslint/eslint-plugin": "^2.27.0",
-    "@typescript-eslint/parser": "^2.27.0",
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.0",
-    "rimraf": "^3.0.2",
-    "typescript": "~4.0.3"
-  },
-  "resolutions": {
-    "webpack": "~5.74.0"
+    "@jupyterlab/builder": "^4.0.0",
+    "npm-run-all2": "^7.0.1",
+    "rimraf": "^5.0.10",
+    "typescript": "~5.5.4"
   },
   "sideEffects": [
     "style/*.css"
   ],
   "jupyterlab": {
     "extension": true,
-    "themePath": "style/index.css",
+    "themePath": "style/theme.css",
     "outputDir": "jupyterlab_gruvbox_material/labextension"
   }
 }

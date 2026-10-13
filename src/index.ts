@@ -6,23 +6,25 @@ import {
 import { IThemeManager } from '@jupyterlab/apputils';
 
 /**
- * Initialization data for the jupyterlab_gruvbox_material extension.
+ * Registers the Gruvbox Material theme.
  */
-const extension: JupyterFrontEndPlugin<void> = {
+const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyterlab_gruvbox_material',
+  description: 'Gruvbox Material (dark) theme.',
   requires: [IThemeManager],
   autoStart: true,
   activate: (app: JupyterFrontEnd, manager: IThemeManager) => {
-    console.log('JupyterLab extension jupyterlab_gruvbox_material is activated!');
     const style = 'jupyterlab_gruvbox_material/index.css';
 
     manager.register({
       name: 'Gruvbox Material',
+      displayName: 'Gruvbox Material',
       isLight: false,
+      themeScrollbars: true,
       load: () => manager.loadCSS(style),
       unload: () => Promise.resolve(undefined)
     });
   }
 };
 
-export default extension;
+export default plugin;

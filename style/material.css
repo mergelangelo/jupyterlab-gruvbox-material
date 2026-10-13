@@ -33,6 +33,24 @@
   --gd-purple1: #a86e7e;
   --gd-purple0: #8f606d;
   --gd-foreground-light: #d4be98;
+
+  /* status colors */
+  --jp-warn-color0: var(--gd-orange2);
+  --jp-warn-color1: var(--gd-orange-extra);
+  --jp-warn-color2: var(--gd-orange1);
+  --jp-warn-color3: var(--gd-orange0);
+  --jp-error-color0: var(--gd-red2);
+  --jp-error-color1: var(--gd-red-extra);
+  --jp-error-color2: var(--gd-red1);
+  --jp-error-color3: var(--gd-red0);
+  --jp-success-color0: var(--gd-green2);
+  --jp-success-color1: var(--gd-green-extra);
+  --jp-success-color2: var(--gd-green1);
+  --jp-success-color3: var(--gd-green0);
+  --jp-info-color0: var(--gd-aqua2);
+  --jp-info-color1: var(--gd-aqua-extra);
+  --jp-info-color2: var(--gd-aqua1);
+  --jp-info-color3: var(--gd-aqua0);
   --gd-gray: #a89984;
   --gd-gray-dark: #7c6f64;
 
@@ -57,12 +75,14 @@
   --jp-border-color1: #3c3836;
   --jp-border-color2: #3c3836;
   --jp-border-color3: #32302f;
+  --jp-inverse-border-color: #665c54;
 
   /* orange accent: active cell, tabs, buttons, focus */
   --jp-brand-color0: #c35e0a;
   --jp-brand-color1: #e78a4e;
   --jp-brand-color2: #b77244;
   --jp-brand-color3: #9b633f;
+  --jp-brand-color4: #5a4535;
   --jp-accent-color0: #a9b665;
   --jp-accent-color1: #a9b665;
   --jp-accent-color2: #899256;
@@ -115,43 +135,108 @@
   --jp-mirror-editor-hr-color: #504945;
 
   --jp-content-link-color: #e78a4e;
+
+  /* UI and content text */
+  --jp-ui-font-color0: #ebdbb2;
+  --jp-ui-font-color1: #d4be98;
+  --jp-ui-font-color2: #a89984;
+  --jp-ui-font-color3: #7c6f64;
+  --jp-ui-inverse-font-color0: #1d2021;
+  --jp-ui-inverse-font-color1: #282828;
+  --jp-ui-inverse-font-color2: #504945;
+  --jp-ui-inverse-font-color3: #665c54;
+  --jp-content-font-color0: #ebdbb2;
+  --jp-content-font-color1: #d4be98;
+  --jp-content-font-color2: #a89984;
+  --jp-content-font-color3: #7c6f64;
+  --jp-content-link-visited-color: #d3869b;
+  --jp-content-link-hover-color: #ee9d69;
+
+  /* buttons, inputs, switches */
+  --jp-accept-color-normal: #e78a4e;
+  --jp-accept-color-hover: #d07e49;
+  --jp-accept-color-active: #b77244;
+  --jp-reject-color-normal: #665c54;
+  --jp-reject-color-hover: #504945;
+  --jp-reject-color-active: #45403d;
+  --jp-input-background: #32302f;
+  --jp-input-box-shadow: inset 0 0 2px #e78a4e;
+  --jp-input-active-box-shadow-color: rgba(231, 138, 78, 0.3);
+  --jp-switch-color: #665c54;
+  --jp-switch-true-position-color: #e78a4e;
+  --jp-notebook-multiselected-color: rgba(231, 138, 78, 0.18);
+  --jp-search-selected-match-background-color: #e78a4e;
+  --jp-search-selected-match-color: #1d2021;
+
+  /* file type icons */
+  --jp-icon-contrast-color0: #d3869b;
+  --jp-icon-contrast-color1: #a9b665;
+  --jp-icon-contrast-color2: #ea6962;
+  --jp-icon-contrast-color3: #7daea3;
+  --jp-jupyter-icon-color: #e78a4e;
+  --jp-notebook-icon-color: #e78a4e;
+  --jp-json-icon-color: #d8a657;
+  --jp-console-icon-background-color: #7daea3;
+  --jp-console-icon-color: #1d2021;
+  --jp-terminal-icon-background-color: #d4be98;
+  --jp-terminal-icon-color: #3c3836;
+  --jp-text-editor-icon-color: #d4be98;
+  --jp-inspector-icon-color: #d4be98;
+
+  /* completer type badges */
+  --jp-completer-type-background0: #928374;
+  --jp-completer-type-background1: #7daea3;
+  --jp-completer-type-background2: #e78a4e;
+  --jp-completer-type-background3: #a9b665;
+  --jp-completer-type-background4: #ea6962;
+  --jp-completer-type-background5: #d3869b;
+  --jp-completer-type-background6: #9b633f;
+  --jp-completer-type-background7: #d3869b;
+  --jp-completer-type-background8: #928374;
+  --jp-completer-type-background9: #d8a657;
+  --jp-completer-type-background10: #89b482;
   --jp-scrollbar-background-color: #282828;
   --jp-scrollbar-thumb-color: 102, 92, 84;
 }
 
-.cm-s-jupyter span.cm-comment { font-style: italic; }
-.cm-s-jupyter span.cm-keyword { font-weight: normal; }
-.cm-s-jupyter .CodeMirror-matchingbracket { color: #e78a4e !important; background: #504945; }
+/* code editor (CodeMirror 6): plain-weight keywords, orange bracket match */
+.cm-content:not([data-language='markdown']) span { font-weight: normal; }
+.cm-editor .cm-matchingBracket {
+  color: #e78a4e !important;
+  background-color: #504945 !important;
+}
+.cm-editor .cm-nonmatchingBracket { color: #ea6962 !important; }
 
 /* rendered markdown: colored headings, orange emphasis, blue inline code */
-.jp-RenderedHTMLCommon h1 { color: #ea6962; }
-.jp-RenderedHTMLCommon h2 { color: #e78a4e; }
-.jp-RenderedHTMLCommon h3 { color: #a9b665; }
-.jp-RenderedHTMLCommon h4 { color: #89b482; }
-.jp-RenderedHTMLCommon h5 { color: #7daea3; }
-.jp-RenderedHTMLCommon h6 { color: #d3869b; }
-.jp-RenderedHTMLCommon strong,
-.jp-RenderedHTMLCommon em { color: #e78a4e; }
-.jp-RenderedHTMLCommon :not(pre) > code {
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon h1 { color: #ea6962; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon h2 { color: #e78a4e; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon h3 { color: #a9b665; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon h4 { color: #89b482; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon h5 { color: #7daea3; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon h6 { color: #d3869b; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon strong,
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon em { color: #e78a4e; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon :not(pre) > code {
   color: #7daea3;
   background-color: #3c3836;
   border-radius: 3px;
   padding: 1px 4px;
 }
-.jp-RenderedHTMLCommon pre { background-color: #3c3836; }
-.jp-RenderedHTMLCommon blockquote {
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon pre { background-color: #3c3836; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon pre code { background-color: transparent; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon blockquote {
   border-left: 3px solid #e78a4e;
   color: #d5c4a1;
   background: transparent;
 }
-.jp-RenderedHTMLCommon mark { background: #e78a4e; color: #1d2021; }
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd) { background: rgba(80, 73, 69, 0.4); }
-.jp-RenderedHTMLCommon tbody tr:nth-child(even) { background: rgba(80, 73, 69, 0.2); }
-.jp-RenderedHTMLCommon tbody tr:hover { background: #504945; }
-.jp-RenderedHTMLCommon thead th { color: #e78a4e; }
-.jp-Notebook ::selection,
-.jp-RenderedHTMLCommon ::selection { background: rgba(234, 105, 98, 0.45); }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon mark { background: #e78a4e; color: #1d2021; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon tbody tr:nth-child(odd) { background: rgba(80, 73, 69, 0.4); }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon tbody tr:nth-child(even) { background: rgba(80, 73, 69, 0.2); }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon tbody tr:hover { background: #504945; }
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon thead th { color: #e78a4e; }
+:is(.jp-ThemedContainer, body) .jp-Notebook ::selection,
+:is(.jp-ThemedContainer, body) .jp-RenderedHTMLCommon ::selection { background: rgba(234, 105, 98, 0.45); }
 
 /* selected file in the file browser: quiet highlight with an orange name */
-.jp-DirListing-item.jp-mod-selected { background: #3c3836; color: #e78a4e; }
-.jp-DirListing-item.jp-mod-selected .jp-DirListing-itemModified { color: #a89984; }
+:is(.jp-ThemedContainer, body) .jp-DirListing-item.jp-mod-selected { background: #3c3836; color: #e78a4e; }
+:is(.jp-ThemedContainer, body) .jp-DirListing-item.jp-mod-selected .jp-DirListing-itemModified { color: #a89984; }

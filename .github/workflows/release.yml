@@ -26,12 +26,10 @@ jobs:
         run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
 
       - name: Install build tools
-        run: python -m pip install "jupyterlab==3.4.*" "jupyter_packaging~=0.7.9" build wheel "setuptools<70"
+        run: python -m pip install "jupyterlab>=4.5,<4.6" build
 
       - name: Build wheel
-        run: |
-          jlpm install --frozen-lockfile
-          python -m build --wheel --no-isolation
+        run: python -m build --wheel
 
       - name: Check the extension installs
         run: |
@@ -61,12 +59,14 @@ jobs:
           target_commitish: ${{ github.sha }}
           files: dist/*.whl
           body: |
-            Gruvbox Material theme for JupyterLab 3.
+            Gruvbox Material theme for JupyterLab 4.
 
             ```
-            pip install jupyterlab-gruvbox-material
+            pip install -U jupyterlab-gruvbox-material
             ```
             Then restart JupyterLab and choose **Settings → Theme → Gruvbox Material**.
+
+            On JupyterLab 3 use `pip install "jupyterlab-gruvbox-material<2"`.
 
   pypi:
     needs: build

@@ -110,3 +110,7 @@ dmypy.json
 
 # OSX files
 .DS_Store
+
+# JupyterLab 4 build
+jupyterlab_gruvbox_material/_version.py
+.yarn/

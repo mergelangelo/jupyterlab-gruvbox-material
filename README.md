@@ -1,6 +1,6 @@
 # jupyterlab_gruvbox_material
 
-Gruvbox Material (dark) theme for JupyterLab 3.
+Gruvbox Material (dark) theme for JupyterLab 4.
 
 A soft, low-contrast gruvbox look: warm beige text, an orange accent, colored
 headings and darker side panels, in the Gruvbox Material palette.
@@ -9,7 +9,9 @@ headings and darker side panels, in the Gruvbox Material palette.
 
 ## Requirements
 
-- JupyterLab 3.x (tested on 3.4.4)
+- JupyterLab 4.x (tested on 4.5.11)
+
+Still on JupyterLab 3? Use the 1.x line, see [below](#jupyterlab-3).
 
 ## Install
 
@@ -20,11 +22,17 @@ pip install jupyterlab-gruvbox-material
 Restart JupyterLab, then choose **Settings → Theme → Gruvbox Material**.
 
 Each [release](https://github.com/mergelangelo/jupyterlab-gruvbox-material/releases) also has the wheel attached,
-so you can install a specific version straight from GitHub:
+so you can install a specific version straight from GitHub.
+
+## JupyterLab 3
+
+Versions 1.x support JupyterLab 3. Pin the version so pip does not pick 2.x:
 
 ```bash
-pip install https://github.com/mergelangelo/jupyterlab-gruvbox-material/releases/download/v1.0.0/jupyterlab_gruvbox_material-1.0.0-py3-none-any.whl
+pip install "jupyterlab-gruvbox-material<2"
 ```
+
+The source for 1.x lives on the [`jupyterlab-3`](https://github.com/mergelangelo/jupyterlab-gruvbox-material/tree/jupyterlab-3) branch.
 
 ## Uninstall
 
@@ -39,15 +47,16 @@ and rebuild (see below).
 
 ## Building from source
 
-Requires Node.js and Python 3.8–3.11.
+Requires Node.js 18+ and Python 3.9+.
 
 ```bash
-pip install "jupyterlab==3.4.*" "jupyter_packaging~=0.7.9" build
-jlpm install
-python -m build --wheel --no-isolation
+pip install "jupyterlab>=4.5,<4.6" build
+python -m build
 ```
 
-The wheel is written to `dist/`.
+The wheel is written to `dist/`. For development, `pip install -e .` followed by
+`jupyter labextension develop . --overwrite` links the extension into JupyterLab;
+`jlpm build` rebuilds it after changes.
 
 ## License
 

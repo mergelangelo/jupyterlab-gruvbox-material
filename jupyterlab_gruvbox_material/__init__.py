@@ -1,17 +1,12 @@
+try:
+    from ._version import __version__
+except ImportError:
+    # Fallback when the package was not installed through the build backend
+    import warnings
 
-import json
-import os.path as osp
-
-from ._version import __version__
-
-HERE = osp.abspath(osp.dirname(__file__))
-
-with open(osp.join(HERE, 'labextension', 'package.json')) as fid:
-    data = json.load(fid)
+    warnings.warn("Importing 'jupyterlab_gruvbox_material' outside a proper installation.")
+    __version__ = "dev"
 
 
 def _jupyter_labextension_paths():
-    return [{
-        'src': 'labextension',
-        'dest': data['name']
-    }]
+    return [{"src": "labextension", "dest": "jupyterlab_gruvbox_material"}]
