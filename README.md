@@ -11,13 +11,18 @@ muted accents and a calmer background, in the Gruvbox Material palette.
 
 ## Install
 
-Install the prebuilt package from the latest release:
+```bash
+pip install jupyterlab-gruvbox-material
+```
+
+Restart JupyterLab, then choose **Settings → Theme → Gruvbox Material**.
+
+Each [release](https://github.com/mergelangelo/jupyterlab-gruvbox-material/releases) also has the wheel attached,
+so you can install a specific version straight from GitHub:
 
 ```bash
 pip install https://github.com/mergelangelo/jupyterlab-gruvbox-material/releases/download/v1.0.0/jupyterlab_gruvbox_material-1.0.0-py3-none-any.whl
 ```
-
-Restart JupyterLab, then choose **Settings → Theme → Gruvbox Material**.
 
 ## Uninstall
 
