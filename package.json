@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab_gruvbox_material",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Gruvbox Material (dark) theme for JupyterLab 3.",
   "keywords": [
     "jupyter",

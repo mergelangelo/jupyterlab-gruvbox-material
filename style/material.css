@@ -1,6 +1,7 @@
 
 /*-----------------------------------------------------------------------------
-| Gruvbox Material colors (dark, medium) — softer contrast, muted accents.
+| Gruvbox Material colors (dark) — palette and accents in the spirit of
+| the Material Gruvbox look: orange accent, colored headings, dark side panels.
 |----------------------------------------------------------------------------*/
 :root {
   --gd-red2: #ea6962;
@@ -35,80 +36,122 @@
   --gd-gray: #a89984;
   --gd-gray-dark: #7c6f64;
 
-  /* backgrounds: less depth difference, no near-black */
-  --jp-layout-color0: #1d1d1d;
-  --jp-layout-color1: #282828;
+  /* backgrounds: notebook #282828, side panels a step darker */
+  --jp-layout-color0: #282828;
+  --jp-layout-color1: #1d2021;
   --jp-layout-color2: #32302f;
   --jp-layout-color3: #3c3836;
-  --jp-layout-color4: #45403d;
-  --jp-layout-color5: #5a524c;
+  --jp-layout-color4: #504945;
+  --jp-layout-color5: #665c54;
   --jp-layout-color6: #7c6f64;
 
-  /* text: warm beige instead of bright cream */
-  --jp-inverse-layout-color0: #ddc7a1;
+  /* text */
+  --jp-inverse-layout-color0: #ebdbb2;
   --jp-inverse-layout-color1: #d4be98;
-  --jp-inverse-layout-color2: #c5b18f;
+  --jp-inverse-layout-color2: #d5c4a1;
   --jp-inverse-layout-color3: #a89984;
   --jp-inverse-layout-color4: #928374;
   --jp-inverse-layout-color5: #7c6f64;
 
-  --jp-border-color0: #45403d;
+  --jp-border-color0: #504945;
   --jp-border-color1: #3c3836;
-  --jp-border-color2: #32302f;
-  --jp-border-color3: #282828;
+  --jp-border-color2: #3c3836;
+  --jp-border-color3: #32302f;
 
-  --jp-cell-editor-background: #2b2a29;
-  --jp-cell-editor-active-background: #2b2a29;
+  /* orange accent: active cell, tabs, buttons, focus */
+  --jp-brand-color0: #c35e0a;
+  --jp-brand-color1: #e78a4e;
+  --jp-brand-color2: #b77244;
+  --jp-brand-color3: #9b633f;
+  --jp-accent-color0: #a9b665;
+  --jp-accent-color1: #a9b665;
+  --jp-accent-color2: #899256;
+  --jp-accent-color3: #757d4d;
+
+  --jp-cell-editor-background: #32302f;
+  --jp-cell-editor-active-background: #32302f;
   --jp-cell-editor-border-color: #3c3836;
   --jp-cell-editor-box-shadow: none;
-  --jp-cell-editor-active-border-color: #5a524c;
+  --jp-cell-editor-active-border-color: #665c54;
+  --jp-cell-prompt-not-active-font-color: #7c6f64;
+  --jp-cell-inprompt-font-color: #7c6f64;
+  --jp-cell-outprompt-font-color: #7c6f64;
 
-  --jp-notebook-select-background: #32302f;
-  --jp-rendermime-error-background: #2f2523;
-  --jp-rendermime-table-row-background: #2b2a29;
-  --jp-rendermime-table-row-hover-background: rgba(216, 166, 87, 0.12);
-  --jp-input-active-background: #1d1d1d;
+  --jp-notebook-select-background: #3c3836;
+  --jp-rendermime-error-background: #3a2a28;
+  --jp-rendermime-table-row-background: rgba(80, 73, 69, 0.2);
+  --jp-rendermime-table-row-hover-background: #504945;
+  --jp-input-active-background: #1d2021;
   --jp-dialog-background: rgba(0, 0, 0, 0.5);
 
-  --jp-editor-selected-background: #3c3836;
-  --jp-editor-selected-focused-background: #45403d;
+  --jp-editor-selected-background: rgba(234, 105, 98, 0.25);
+  --jp-editor-selected-focused-background: rgba(234, 105, 98, 0.4);
   --jp-editor-cursor-color: #d4be98;
 
-  /* syntax, close to gruvbox-material */
-  --jp-mirror-editor-keyword-color: #ea6962;
+  /* syntax */
+  --jp-mirror-editor-keyword-color: #d3869b;
   --jp-mirror-editor-atom-color: #d3869b;
   --jp-mirror-editor-number-color: #d3869b;
-  --jp-mirror-editor-def-color: #a9b665;
+  --jp-mirror-editor-def-color: #e78a4e;
   --jp-mirror-editor-variable-color: #d4be98;
   --jp-mirror-editor-variable-2-color: #7daea3;
-  --jp-mirror-editor-variable-3-color: #d8a657;
-  --jp-mirror-editor-punctuation-color: #d4be98;
+  --jp-mirror-editor-variable-3-color: #7daea3;
+  --jp-mirror-editor-punctuation-color: #a89984;
   --jp-mirror-editor-property-color: #7daea3;
-  --jp-mirror-editor-operator-color: #e78a4e;
+  --jp-mirror-editor-operator-color: #ea6962;
   --jp-mirror-editor-comment-color: #928374;
   --jp-mirror-editor-string-color: #a9b665;
   --jp-mirror-editor-string-2-color: #89b482;
-  --jp-mirror-editor-meta-color: #e78a4e;
-  --jp-mirror-editor-qualifier-color: #d8a657;
-  --jp-mirror-editor-builtin-color: #d8a657;
+  --jp-mirror-editor-meta-color: #ea6962;
+  --jp-mirror-editor-qualifier-color: #e78a4e;
+  --jp-mirror-editor-builtin-color: #e78a4e;
   --jp-mirror-editor-bracket-color: #a89984;
-  --jp-mirror-editor-tag-color: #e78a4e;
-  --jp-mirror-editor-attribute-color: #d8a657;
-  --jp-mirror-editor-header-color: #e78a4e;
-  --jp-mirror-editor-quote-color: #928374;
-  --jp-mirror-editor-link-color: #7daea3;
+  --jp-mirror-editor-tag-color: #ea6962;
+  --jp-mirror-editor-attribute-color: #7daea3;
+  --jp-mirror-editor-header-color: #ea6962;
+  --jp-mirror-editor-quote-color: #a89984;
+  --jp-mirror-editor-link-color: #e78a4e;
   --jp-mirror-editor-error-color: #ea6962;
-  --jp-mirror-editor-hr-color: #5a524c;
+  --jp-mirror-editor-hr-color: #504945;
 
-  --jp-content-link-color: #7daea3;
+  --jp-content-link-color: #e78a4e;
   --jp-scrollbar-background-color: #282828;
-  --jp-scrollbar-thumb-color: 90, 82, 76;
+  --jp-scrollbar-thumb-color: 102, 92, 84;
 }
 
 .cm-s-jupyter span.cm-comment { font-style: italic; }
 .cm-s-jupyter span.cm-keyword { font-weight: normal; }
-.cm-s-jupyter .CodeMirror-matchingbracket { color: #d8a657 !important; background: #45403d; }
+.cm-s-jupyter .CodeMirror-matchingbracket { color: #e78a4e !important; background: #504945; }
 
-/* selected file in the file browser: quiet highlight instead of solid yellow */
-.jp-DirListing-item.jp-mod-selected { background: #45403d; color: #ddc7a1; }
+/* rendered markdown: colored headings, orange emphasis, blue inline code */
+.jp-RenderedHTMLCommon h1 { color: #ea6962; }
+.jp-RenderedHTMLCommon h2 { color: #e78a4e; }
+.jp-RenderedHTMLCommon h3 { color: #a9b665; }
+.jp-RenderedHTMLCommon h4 { color: #89b482; }
+.jp-RenderedHTMLCommon h5 { color: #7daea3; }
+.jp-RenderedHTMLCommon h6 { color: #d3869b; }
+.jp-RenderedHTMLCommon strong,
+.jp-RenderedHTMLCommon em { color: #e78a4e; }
+.jp-RenderedHTMLCommon :not(pre) > code {
+  color: #7daea3;
+  background-color: #3c3836;
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+.jp-RenderedHTMLCommon pre { background-color: #3c3836; }
+.jp-RenderedHTMLCommon blockquote {
+  border-left: 3px solid #e78a4e;
+  color: #d5c4a1;
+  background: transparent;
+}
+.jp-RenderedHTMLCommon mark { background: #e78a4e; color: #1d2021; }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd) { background: rgba(80, 73, 69, 0.4); }
+.jp-RenderedHTMLCommon tbody tr:nth-child(even) { background: rgba(80, 73, 69, 0.2); }
+.jp-RenderedHTMLCommon tbody tr:hover { background: #504945; }
+.jp-RenderedHTMLCommon thead th { color: #e78a4e; }
+.jp-Notebook ::selection,
+.jp-RenderedHTMLCommon ::selection { background: rgba(234, 105, 98, 0.45); }
+
+/* selected file in the file browser: quiet highlight with an orange name */
+.jp-DirListing-item.jp-mod-selected { background: #3c3836; color: #e78a4e; }
 .jp-DirListing-item.jp-mod-selected .jp-DirListing-itemModified { color: #a89984; }
