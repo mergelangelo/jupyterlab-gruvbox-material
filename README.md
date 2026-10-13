@@ -5,6 +5,8 @@ Gruvbox Material (dark, medium) theme for JupyterLab 3.
 A softer, lower-contrast take on gruvbox: warm beige text instead of bright cream,
 muted accents and a calmer background, in the Gruvbox Material palette.
 
+![Gruvbox Material theme in JupyterLab](docs/screenshot.png)
+
 ## Requirements
 
 - JupyterLab 3.x (tested on 3.4.4)
