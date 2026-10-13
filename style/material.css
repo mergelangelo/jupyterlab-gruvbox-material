@@ -1,0 +1,114 @@
+
+/*-----------------------------------------------------------------------------
+| Gruvbox Material colors (dark, medium) — softer contrast, muted accents.
+|----------------------------------------------------------------------------*/
+:root {
+  --gd-red2: #ea6962;
+  --gd-red-extra: #d3615b;
+  --gd-red1: #ba5954;
+  --gd-red0: #9c4f4b;
+  --gd-orange2: #e78a4e;
+  --gd-orange-extra: #d07e49;
+  --gd-orange1: #b77244;
+  --gd-orange0: #9b633f;
+  --gd-yellow2: #d8a657;
+  --gd-yellow-extra: #c39751;
+  --gd-yellow1: #ac864b;
+  --gd-yellow0: #927444;
+  --gd-green2: #a9b665;
+  --gd-green-extra: #9aa55e;
+  --gd-green1: #899256;
+  --gd-green0: #757d4d;
+  --gd-aqua2: #89b482;
+  --gd-aqua-extra: #7da377;
+  --gd-aqua1: #71916c;
+  --gd-aqua0: #627c5e;
+  --gd-blue2: #7daea3;
+  --gd-blue-extra: #739e94;
+  --gd-blue1: #688c84;
+  --gd-blue0: #5b7872;
+  --gd-purple2: #d3869b;
+  --gd-purple-extra: #be7b8d;
+  --gd-purple1: #a86e7e;
+  --gd-purple0: #8f606d;
+  --gd-foreground-light: #d4be98;
+  --gd-gray: #a89984;
+  --gd-gray-dark: #7c6f64;
+
+  /* backgrounds: less depth difference, no near-black */
+  --jp-layout-color0: #1d1d1d;
+  --jp-layout-color1: #282828;
+  --jp-layout-color2: #32302f;
+  --jp-layout-color3: #3c3836;
+  --jp-layout-color4: #45403d;
+  --jp-layout-color5: #5a524c;
+  --jp-layout-color6: #7c6f64;
+
+  /* text: warm beige instead of bright cream */
+  --jp-inverse-layout-color0: #ddc7a1;
+  --jp-inverse-layout-color1: #d4be98;
+  --jp-inverse-layout-color2: #c5b18f;
+  --jp-inverse-layout-color3: #a89984;
+  --jp-inverse-layout-color4: #928374;
+  --jp-inverse-layout-color5: #7c6f64;
+
+  --jp-border-color0: #45403d;
+  --jp-border-color1: #3c3836;
+  --jp-border-color2: #32302f;
+  --jp-border-color3: #282828;
+
+  --jp-cell-editor-background: #2b2a29;
+  --jp-cell-editor-active-background: #2b2a29;
+  --jp-cell-editor-border-color: #3c3836;
+  --jp-cell-editor-box-shadow: none;
+  --jp-cell-editor-active-border-color: #5a524c;
+
+  --jp-notebook-select-background: #32302f;
+  --jp-rendermime-error-background: #2f2523;
+  --jp-rendermime-table-row-background: #2b2a29;
+  --jp-rendermime-table-row-hover-background: rgba(216, 166, 87, 0.12);
+  --jp-input-active-background: #1d1d1d;
+  --jp-dialog-background: rgba(0, 0, 0, 0.5);
+
+  --jp-editor-selected-background: #3c3836;
+  --jp-editor-selected-focused-background: #45403d;
+  --jp-editor-cursor-color: #d4be98;
+
+  /* syntax, close to gruvbox-material */
+  --jp-mirror-editor-keyword-color: #ea6962;
+  --jp-mirror-editor-atom-color: #d3869b;
+  --jp-mirror-editor-number-color: #d3869b;
+  --jp-mirror-editor-def-color: #a9b665;
+  --jp-mirror-editor-variable-color: #d4be98;
+  --jp-mirror-editor-variable-2-color: #7daea3;
+  --jp-mirror-editor-variable-3-color: #d8a657;
+  --jp-mirror-editor-punctuation-color: #d4be98;
+  --jp-mirror-editor-property-color: #7daea3;
+  --jp-mirror-editor-operator-color: #e78a4e;
+  --jp-mirror-editor-comment-color: #928374;
+  --jp-mirror-editor-string-color: #a9b665;
+  --jp-mirror-editor-string-2-color: #89b482;
+  --jp-mirror-editor-meta-color: #e78a4e;
+  --jp-mirror-editor-qualifier-color: #d8a657;
+  --jp-mirror-editor-builtin-color: #d8a657;
+  --jp-mirror-editor-bracket-color: #a89984;
+  --jp-mirror-editor-tag-color: #e78a4e;
+  --jp-mirror-editor-attribute-color: #d8a657;
+  --jp-mirror-editor-header-color: #e78a4e;
+  --jp-mirror-editor-quote-color: #928374;
+  --jp-mirror-editor-link-color: #7daea3;
+  --jp-mirror-editor-error-color: #ea6962;
+  --jp-mirror-editor-hr-color: #5a524c;
+
+  --jp-content-link-color: #7daea3;
+  --jp-scrollbar-background-color: #282828;
+  --jp-scrollbar-thumb-color: 90, 82, 76;
+}
+
+.cm-s-jupyter span.cm-comment { font-style: italic; }
+.cm-s-jupyter span.cm-keyword { font-weight: normal; }
+.cm-s-jupyter .CodeMirror-matchingbracket { color: #d8a657 !important; background: #45403d; }
+
+/* selected file in the file browser: quiet highlight instead of solid yellow */
+.jp-DirListing-item.jp-mod-selected { background: #45403d; color: #ddc7a1; }
+.jp-DirListing-item.jp-mod-selected .jp-DirListing-itemModified { color: #a89984; }
